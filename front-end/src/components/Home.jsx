@@ -5,12 +5,11 @@ import Product from "./Product";
 const Home = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true)
-    const [error, setError] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:3500/api/products');
+            const res = await axios.get('https://shop-zone-ivgi.onrender.com/api/products');
             setProducts(res.data);
             setLoading(false);
         } catch (err) {

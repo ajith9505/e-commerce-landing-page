@@ -15,7 +15,7 @@ const ProductPage = () => {
     const [loading, setLoading] = useState(true);
 
     const fetchProductDetails = async () => {
-        const res = await axios(`http://localhost:3500/api/products/${productId}`);
+        const res = await axios(`https://shop-zone-ivgi.onrender.com/api/products/${productId}`);
         setProduct(res.data);
         setLoading(false);
     }

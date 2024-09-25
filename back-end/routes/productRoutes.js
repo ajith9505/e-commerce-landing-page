@@ -1,14 +1,8 @@
-const { fetchAllProducts, addProduct, fetchProductById, filterProducts } = require('../controllers/productController')
+const { fetchAllProducts, fetchProductById } = require('../controllers/productController')
 
 const router = require('express').Router()
 
-router
-    .route('/')
-    .get(fetchAllProducts)
-    .post(addProduct)
-
+router.route('/').get(fetchAllProducts)
 router.route('/:id').get(fetchProductById)
-
-router.route("/filtered-products").post(filterProducts);
 
 module.exports = router
